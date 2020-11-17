@@ -1,0 +1,16 @@
+<h1>Lista dos Pets Perdidos</h1>
+
+<%= link_to "Create Pet", pets_new_path %>
+
+<ul>
+	<% @pets.each do |pet| %>
+		<li> 
+			<%= pet.name %> | 
+			<%= pet.address %> | 
+			<%= pet.species %> 
+			<%= link_to "show", pet_path(pet) %> 
+			<%= link_to "edit", edit_path(pet) %>
+			<%= link_to "deletar", pet_path(pet), method: :delete, data: {confirm: "Are you sure?"} %>
+		 </li>
+	<% end %>
+</ul>
